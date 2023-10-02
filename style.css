@@ -9,14 +9,12 @@
     margin-top: 24px;
 }
 
-
-
 .btn {
 padding:15px 20px;
 margin-left: 10px;
 margin-bottom: 20px;
-outline: none;
-/* background-color: #27ae60; */
+outline-style: groove;
+background-color: #27ae60;
 border: #95a5a6;
 border-radius:5px;
 box-shadow: 0 9px #95a5a6;
