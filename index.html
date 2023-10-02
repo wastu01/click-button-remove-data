@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="Description" content="Enter your description here"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 
-        <title>網頁測速模擬</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <title>網頁測速模擬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <h1>網速測試</h1>
     <div class="demo-button-container">
         <input type="text" id="targetUrl" placeholder="輸入目標URL">
         <button class="btn" onclick="startTest()">開始測試</button>
         <button class="btn" onclick="clearData()">清除資料</button>
-
     </div>
 
-    <div>
-
-    </div>
     <div class="demo-button-container float-left">
-       
-       <textarea class="textarea" type="text" id="measure" placeholder="數據產生器....生成中...."></textarea>
+        <textarea class="textarea" type="text" id="measure" placeholder="數據產生器....生成中...."></textarea>
     </div>
 
     <script>
@@ -35,15 +30,16 @@
 
         // 開始測試
         function startTest() {
-
-
             // 確認目標URL格式正確
             var targetUrl = targetUrlInput.value;
             if (isValidURL(targetUrl)) {
-                // 在這裡觸發測試操作
-
                 // 鎖定輸入框
                 targetUrlInput.disabled = true;
+
+                // 三秒後更改輸入框內容
+                setTimeout(function() {
+                    measureInput.value = '數據產生器....生成完成....';
+                }, 3000);
             } else {
                 alert('請輸入有效的URL格式');
             }
